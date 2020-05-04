@@ -50,7 +50,17 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+let employeeUpdater = () => {
+  let updatedEmployees =  employees.filter(e => e.firstName !=='Theo' );
+  
+  updatedEmployees.forEach(e => {
+    if (e.firstName === 'Lorie') {
+      e.department = "HR";
+    }
+  });
+
+  return updatedEmployees;
+}
 
 
 
@@ -68,8 +78,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
-
+let removeDuplicates = () => {
+   for (let i = 0; i < workplaceAccidents.length; i++) {
+      for (let j = 0; j < workplaceAccidents.length; j++) {
+        if ( i !== j &&  workplaceAccidents[i] === workplaceAccidents[j]) {
+            workplaceAccidents.splice(j,1);
+        }
+      }
+    }
+    return workplaceAccidents;
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -97,8 +115,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends.find(e => e.name === 'Grumpy').activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -138,8 +156,9 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
-
+let recordCleaner = () => {
+  myCar.accidents.forEach(e=>e.atFaultForAccident=false);
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -157,6 +176,17 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
-
+let looper = () => {
+  for (let i = 0; i < numsArr.length; i++) {
+    const nestedArray = numsArr[i];
+    for (let j = 0; j < nestedArray.length; j++) {
+      if (nestedArray[j] % 2 === 0) {
+        nestedArray[j] = 'even';
+      } else {
+        nestedArray[j] = 'odd';
+      }    
+    }
+  }
+  return numsArr;
+}
 
